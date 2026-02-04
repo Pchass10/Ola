@@ -13,8 +13,8 @@
       --bg1: #ffd6e7;
       --bg2: #ffeef6;
       --card: #ffffffcc;
-      --yes: #ff3b7a;
-      --yesHover: #ff1f68;
+      --Sii: #ff3b7a;
+      --SiiHover: #ff1f68;
     }
 
     * { box-sizing: border-box; }
@@ -86,12 +86,12 @@
       transition: transform .12s ease, background .12s ease;
     }
 
-    #yesBtn {
+    #SiiBtn {
       left: 18%;
-      background: var(--yes);
+      background: var(--Sii);
       color: #fff;
     }
-    #yesBtn:hover { background: var(--yesHover); }
+    #SiiBtn:hover { background: var(--SiiHover); }
 
     #noBtn {
       left: 62%;
@@ -174,12 +174,12 @@
     <h1>Mary Janee te gustaria ser mi san valentin?</h1>
 
     <section class="button-zone" id="zone">
-      <button id="yesBtn">Yes</button>
+      <button id="SiiBtn">Sii</button>
       <button id="noBtn">No</button>
     </section>
 
     <!-- HINT -->
-    <div class="hint" id="hint">“No” seems a bit shy 😈</div>
+    <div class="hint" id="hint">“No” se ve timidoo 😈</div>
 
     <section class="result" id="result">
       <h2>YAY! 🎉</h2>
@@ -193,7 +193,7 @@
 
   <script>
     const zone = document.getElementById("zone");
-    const yesBtn = document.getElementById("yesBtn");
+    const SiiBtn = document.getElementById("SiiBtn");
     const noBtn = document.getElementById("noBtn");
     const result = document.getElementById("result");
     const hint = document.getElementById("hint");
@@ -243,11 +243,11 @@
       }, 300);
     }
 
-    /* ---------- YES BUTTON GROWS ---------- */
-    let yesScale = 1;
-    function growYes() {
-      yesScale = Math.min(2.2, yesScale + 0.1);
-      yesBtn.style.transform = `translateY(-50%) scale(${yesScale})`;
+    /* ---------- Sii BUTTON GROWS ---------- */
+    let SiiScale = 1;
+    function growSii() {
+      SiiScale = Math.min(2.2, SiiScale + 0.1);
+      SiiBtn.style.transform = `translateY(-50%) scale(${SiiScale})`;
     }
 
     /* ---------- NO BUTTON RUNS AWAY ---------- */
@@ -275,7 +275,7 @@
       noBtn.style.top = newTop + "px";
       noBtn.style.transform = "none";
 
-      growYes();
+      growSii();
     }
 
     zone.addEventListener("pointermove", e => {
@@ -289,8 +289,8 @@
 
     noBtn.addEventListener("click", e => e.preventDefault());
 
-    /* ---------- YES CLICK ---------- */
-    yesBtn.addEventListener("click", () => {
+    /* ---------- Sii CLICK ---------- */
+    SiiBtn.addEventListener("click", () => {
       zone.style.display = "none";
       hint.style.display = "none";     // HIDE THE HINT
       result.style.display = "block";
